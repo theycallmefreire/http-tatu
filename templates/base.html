@@ -4,16 +4,139 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}HTTP Tatu{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='logo/logo_sem_texto_lines.png') }}">
     <style>
         body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 20px; }
-        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px; }
+        .container { max-width: 1800px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px;  }
         img { max-width: 100%; height: auto; border-radius: 5px; }
         h1, h2 { color: #333; }
         a { text-decoration: none; color: #007bff; }
+        .img-status {
+            width: 100%;      
+            max-width: 600px; 
+            height: auto;     
+        }
+
+        .img-galeria {
+            width: 100%;
+            max-width: 450px; 
+            height: auto;
+        }
+            
+        /* 1. O CONTAINER DO GRID (O "MOLDE") */
+        .galeria-container {
+            display: grid;
+            /* Mágica da responsividade:
+            Cria colunas com no mínimo 280px de largura.
+            'auto-fit' faz ele colocar quantas colunas couberem na tela.
+            '1fr' faz as colunas crescerem para preencher o espaço.
+            */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; /* Espaçamento entre os cards */
+            padding-top: 20px;
+        }
+
+        /* 2. O CARD (O ITEM INDIVIDUAL) */
+        .card {
+            display: block; /* Faz o link <a> se comportar como um bloco */
+            text-decoration: none;
+            color: white;
+            border-radius: 8px; /* Cantos arredondados */
+            overflow: hidden; /* Isso é CRUCIAL: corta a imagem para os cantos arredondados */
+            
+            /* Posição relativa é a "âncora" para o texto */
+            position: relative; 
+            
+            
+        }
+
+        .card:hover {
+            transform: scale(1.03); /* Leve aumento */
+           
+        }
+
+        /* 3. A IMAGEM DENTRO DO CARD */
+        .card-img {
+            width: 100%; /* Faz a imagem preencher o card */
+            display: block; /* Remove espaços em branco indesejados */
+            
+            /* Garante que todas as imagens tenham a mesma proporção (ex: 4:3).
+            Ajuste '4 / 3' se suas imagens tiverem outro formato.
+            */
+            aspect-ratio: 4 / 3; 
+            
+            /* Garante que a imagem cubra o espaço sem distorcer.
+            (Ela pode cortar um pouco da imagem, mas não vai achatar/esticar)
+            */
+            object-fit: cover; 
+        }
+
+        /* 4. O BLOCO DE TEXTO (A FAIXA VERMELHA) */
+        .card-info {
+            /* É aqui que ele "flutua" sobre o card */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            
+            /* Cor de fundo (um vermelho similar ao da foto) */
+            background-color: #a3830c; /* Você pode mudar essa cor */
+            
+            padding: 12px 16px;
+            box-sizing: border-box; /* Garante que o padding não quebre o layout */
+            
+        }
+
+        /* 5. OS TEXTOS DENTRO DA FAIXA */
+        .card-codigo {
+            font-size: 1.6em;
+            font-weight: 700;
+            display: block; /* Faz o código ficar em uma linha */
+            line-height: 1.1;
+        }
+
+        .card-nome {
+            font-size: 1em;
+            font-weight: 400;
+            display: block; /* Faz o nome ficar em outra linha */
+        }
+        /* ESTILIZAÇÃO DO HEADER COM LOGO E TÍTULO */
+        .site-header-link {
+            text-decoration: none; /* Remove o sublinhado do link */
+            color: #333;           /* Cor do texto (a mesma do h1) */
+        }
+
+        .site-header {
+            display: flex;         /* A mágica para alinhar lado a lado */
+            align-items: center;   /* Alinha verticalmente no centro */
+            margin-bottom: 20px;   /* Espaçamento abaixo do header */
+            padding-bottom: 15px;  /* Espaçamento para a linha */
+            border-bottom: 2px solid #eee; /* Uma linha sutil de separação */
+        }
+
+        .site-logo {
+            height: 200px;          /* Define a altura da logo. Ajuste se precisar. */
+            width: auto;           /* Largura automática para manter proporção */
+            margin-right: 10px;    /* Espaço entre a logo e o texto */
+        }
+
+        .site-title {
+            font-size: 2.8em;      /* Tamanho do texto */
+            font-weight: 800;      /* Peso da fonte (negrito) */
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <a href="{{ url_for('pagina_principal') }}" class="site-header-link">
+            <div class="site-header">
+                <img src="{{ url_for('static', filename='logo/logo_sem_texto(2).png') }}" 
+                    alt="Logo HTTP Tatu" 
+                    class="site-logo">
+                
+                <span class="site-title">HTTP Tatu</span>
+            </div>
+         </a>
         {% block content %}{% endblock %}
     </div>
 </body>

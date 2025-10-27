@@ -6,8 +6,7 @@
     
     <h1>{{ codigo }} - {{ info.nome }}</h1>
     
-    <img src="{{ url_for('static', filename='images/' + info.imagem) }}" alt="{{ info.nome }}">
-    
+    <img class="img-status" src="{{ url_for('static', filename='images/' + info.imagem) }}" alt="{{ info.nome }}">      
     <p style="font-size: 1.2em;">{{ info.descricao }}</p>
 
     <br>
