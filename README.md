@@ -1,4 +1,6 @@
-# HTTP Tatu 🐾
+# HTTP Tatu <img width="45" height="45" alt="logo_sem_texto_lines" src="https://github.com/user-attachments/assets/50dee545-4982-4cce-b77f-39271301baf0" />
+
+
 
 Um projeto web que associa códigos de status HTTP a imagens de tatus. Inspirado no `http.cat` e `http.dog`, este app usa Python e Flask para transformar cada erro ou sucesso em um lembrete visual sobre a importância de proteger estes animais.
 
@@ -9,27 +11,21 @@ Um projeto web que associa códigos de status HTTP a imagens de tatus. Inspirado
 
 ## A Causa: Por que Tatus?
 
-Enquanto projetos como `http.cat` e `http.dog` focam no humor, o **HTTP Tatu** tem uma missão: **conscientização**.
+Eu particularmente adoro tatus!
 
-Cada código de status, seja um "OK" (200) ou um "Not Found" (404), é uma oportunidade para destacar a importância da preservação dos tatus. Estes animais, tão significativos para a fauna brasileira, enfrentam sérios riscos, como a perda de habitat e a caça.
+![508](https://github.com/user-attachments/assets/f8ade6db-ef2c-41ee-9a68-deda57c47433)
 
-Este projeto é um pequeno lembrete de que podemos usar a tecnologia, mesmo em projetos de estudo, para trazer visibilidade a causas importantes.
-
-## Demonstração
-
-<img width="757" height="643" alt="image" src="https://github.com/user-attachments/assets/ea6ff8e1-189c-4107-a524-41c454a72c6a" />
-
-
+---
 ### Galeria Principal
 A página inicial (`/`) exibe todos os códigos de status cadastrados, permitindo uma visualização rápida da galeria e suas descrições.
 
-<img width="1489" height="885" alt="image" src="https://github.com/user-attachments/assets/4ff5e595-1844-4691-bbd5-3421cb9116f5" />
+<img width="1710" height="888" alt="image" src="https://github.com/user-attachments/assets/66003637-7b85-4dca-92d4-e8b49a6c0005" />
 
 
 ### Página de Status
 Cada código possui uma página dedicada (ex: `/404`) que mostra a imagem em tamanho maior e a descrição daquele status, sempre com a temática da preservação.
 
-<img width="763" height="576" alt="image" src="https://github.com/user-attachments/assets/c9d50305-6efb-4074-8705-ac5300012359" />
+<img width="1889" height="878" alt="image" src="https://github.com/user-attachments/assets/e6002be0-0af7-4508-a98a-fa44db715a4f" />
 
 
 ## Funcionalidades
@@ -38,7 +34,6 @@ Cada código possui uma página dedicada (ex: `/404`) que mostra a imagem em tam
 * **Rotas Dinâmicas:** Acesso a cada código individualmente através de rotas dinâmicas (ex: `/200`, `/404`, `/500`).
 * **Templates Jinja2:** Uso de um template base (`base.html`) para criar um layout consistente em todo o site.
 * **Página de Erro Personalizada:** O app usa sua própria página de 404 (com um tatu!) caso o usuário acesse uma rota que não existe.
-* **Foco na Mensagem:** Todas as descrições de status conectam o jargão técnico à causa da preservação.
 
 ## Tecnologias Utilizadas
 
@@ -73,10 +68,11 @@ Siga os passos abaixo para rodar o projeto na sua máquina.
     ```bash
     pip install Flask
     ```
-
-4.  **Adicione suas imagens:**
-    Certifique-se de que suas imagens (ex: `200.jpg`, `404.jpg`, etc.) estão dentro da pasta `static/images/`.
-
+4. **Instale requirements**
+   ```bash
+   pip install -r requirements.txt
+   ```
 5.  **Rode o aplicativo:**
     ```bash
-    # O modo debug recarrega o servidor automaticamente a
+    flask --app main run
+    ```
