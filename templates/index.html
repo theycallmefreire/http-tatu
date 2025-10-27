@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Galeria HTTP Tatu{% endblock %}
+
+{% block content %}
+    <h1>Galeria HTTP Tatu</h1>
+    <p>Veja o significado dos códigos HTTP com fotos de tatuis.</p>
+    <hr>
+
+    {% for codigo, info in codigos.items() %}
+        <div class="item-galeria">
+            <h2><a href="/{{ codigo }}">{{ codigo }} - {{ info.nome }}</a></h2>
+            <a href="/{{ codigo }}">
+                <img src="{{ url_for('static', filename='images/' + info.imagem) }}" alt="{{ info.nome }}">
+            </a>
+            <p>{{ info.descricao }}</p>
+        </div>
+        <hr>
+    {% endfor %}
+
+{% endblock %}

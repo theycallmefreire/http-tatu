@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}{{ codigo }} - {{ info.nome }}{% endblock %}
+
+{% block content %}
+    
+    <h1>{{ codigo }} - {{ info.nome }}</h1>
+    
+    <img src="{{ url_for('static', filename='images/' + info.imagem) }}" alt="{{ info.nome }}">
+    
+    <p style="font-size: 1.2em;">{{ info.descricao }}</p>
+
+    <br>
+    <a href="/">← Voltar para a galeria</a>
+
+{% endblock %}
