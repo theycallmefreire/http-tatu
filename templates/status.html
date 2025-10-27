@@ -4,12 +4,12 @@
 
 {% block content %}
     
-    <h1>{{ codigo }} - {{ info.nome }}</h1>
+    <h1 align="center">{{ codigo }} - {{ info.nome }}</h1>
     
-    <img class="img-status" src="{{ url_for('static', filename='images/' + info.imagem) }}" alt="{{ info.nome }}">      
-    <p style="font-size: 1.2em;">{{ info.descricao }}</p>
+    <img  class="img-status" src="{{ url_for('static', filename='images/' + info.imagem) }}" alt="{{ info.nome }}">      
+    <p align="center" style="font-size: 1.2em;">{{ info.descricao }}</p>
 
     <br>
-    <a href="/">← Voltar para a galeria</a>
+    <a align="center" href="/">← Voltar para a galeria</a>
 
 {% endblock %}

@@ -1,11 +1,25 @@
 {% extends "base.html" %}
 
-{% block title %}Galeria HTTP Tatu{% endblock %}
+{% block title %}HTTP Tatu{% endblock %}
 
 {% block content %}
-    <p><b>Veja o significado dos códigos HTTP com fotos de tatus.</b></p>
+    <p align="center"><b>Veja o significado dos códigos HTTP com fotos de tatus.</b></p><br><br>
     <p>Como usar: troque o [code] pelo código desejado.</p>
-    <p>https://http.tatu/[code]</p>
+    <div class="code-snippet">
+        <pre><code id="code-to-copy">https://http.tatu.onrender.com/[code]</code></pre>
+        
+        <button onclick="copyCode('code-to-copy', this)" class="copy-btn" aria-label="Copiar código">
+            <span class="icon-copy">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M13 0H6a2 2 0 0 0-2 2 2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2 2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-7 1.5A.5.5 0 0 1 6.5 1h6a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5h-6a.5.5 0 0 1-.5-.5V1.5Z"/>
+                    <path d="M0 4.5A.5.5 0 0 1 .5 4H3a.5.5 0 0 1 0 1H.5A.5.5 0 0 1 0 4.5ZM0 7.5A.5.5 0 0 1 .5 7H3a.5.5 0 0 1 0 1H.5A.5.5 0 0 1 0 7.5ZM0 10.5A.5.5 0 0 1 .5 10H3a.5.5 0 0 1 0 1H.5a.5.5 0 0 1-.5-.5Z"/>
+                </svg>
+            </span>
+           <span class="text-copied">
+                Copiado!
+            </span>
+        </button>
+    </div>
 
     <div class="galeria-container">
         
