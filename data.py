@@ -71,4 +71,10 @@ STATUS_DATA = {
     508: {"nome": "Loop Detected", "descricao": "O servidor detectou um loop infinito ao processar a requisição.", "imagem": "508.jpg"},
     510: {"nome": "Not Extended", "descricao": "Extensões adicionais são necessárias para completar a requisição.", "imagem": "510.jpg"},
     511: {"nome": "Network Authentication Required", "descricao": "Autenticação de rede é necessária.", "imagem": "511.jpg"},
+    521: {"nome": "Web Server Is Down", "descricao": "O servidor web está fora do ar.", "imagem": "521.jpg"},
+    522: {"nome": "Connection Timed Out", "descricao": "A conexão expirou.", "imagem": "522.jpg"},
+    523: {"nome": "Origin Is Unreachable", "descricao": "A origem está inacessível.", "imagem": "523.jpg"},
+    525: {"nome": "SSL Handshake Failed", "descricao": "Falha no handshake SSL.", "imagem": "525.jpg"},
+    530: {"nome": "Site Is Frozen", "descricao": "O site está congelado.", "imagem": "530.jpg"},    
+    599: {"nome": "Network Connect Timeout Error", "descricao": "Erro de tempo limite na conexão de rede.", "imagem": "599.jpg"},
 }

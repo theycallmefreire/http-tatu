@@ -1,0 +1,225 @@
+ body { font-family: sans-serif; background-color: #222222; margin: 0; padding: 20px; }
+        .container { max-width: 1800px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 8px;  }
+        img { max-width: 100%; height: auto; border-radius: 5px; }
+        h1, h2 { color: #333; }
+        a { text-decoration: none; color: #007bff; }
+        .img-status {
+            display: block;      
+            margin-left: auto;    
+            margin-right: auto;  
+            width: 100%;      
+            max-width: 600px; 
+            height: auto;     
+           
+        }
+
+        .img-galeria {
+            width: 100%;
+            max-width: 450px; 
+            height: auto;
+        }
+            
+        /* 1. O CONTAINER DO GRID (O "MOLDE") */
+        .galeria-container {
+            display: grid;
+            /* Mágica da responsividade:
+            Cria colunas com no mínimo 280px de largura.
+            'auto-fit' faz ele colocar quantas colunas couberem na tela.
+            '1fr' faz as colunas crescerem para preencher o espaço.
+            */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; /* Espaçamento entre os cards */
+            padding-top: 20px;
+        }
+
+        /* 2. O CARD (O ITEM INDIVIDUAL) */
+        .card {
+            display: block; /* Faz o link <a> se comportar como um bloco */
+            text-decoration: none;
+            color: white;
+            border-radius: 8px; /* Cantos arredondados */
+            overflow: hidden; /* Isso é CRUCIAL: corta a imagem para os cantos arredondados */
+            
+            /* Posição relativa é a "âncora" para o texto */
+            position: relative; 
+            
+            
+        }
+
+        .card:hover {
+            transform: scale(1.03); /* Leve aumento */
+           
+        }
+
+        /* 3. A IMAGEM DENTRO DO CARD */
+        .card-img {
+            width: 100%; /* Faz a imagem preencher o card */
+            display: block; /* Remove espaços em branco indesejados */
+            
+            /* Garante que todas as imagens tenham a mesma proporção (ex: 4:3).
+            Ajuste '4 / 3' se suas imagens tiverem outro formato.
+            */
+            aspect-ratio: 4 / 3; 
+            
+            /* Garante que a imagem cubra o espaço sem distorcer.
+            (Ela pode cortar um pouco da imagem, mas não vai achatar/esticar)
+            */
+            object-fit: cover; 
+        }
+
+        /* 4. O BLOCO DE TEXTO (A FAIXA VERMELHA) */
+        .card-info {
+            /* É aqui que ele "flutua" sobre o card */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            
+            /* Cor de fundo (um vermelho similar ao da foto) */
+            background-color: #a3830c; /* Você pode mudar essa cor */
+            
+            padding: 12px 16px;
+            box-sizing: border-box; /* Garante que o padding não quebre o layout */
+            
+        }
+
+        /* 5. OS TEXTOS DENTRO DA FAIXA */
+        .card-codigo {
+            font-size: 1.6em;
+            font-weight: 700;
+            display: block; /* Faz o código ficar em uma linha */
+            line-height: 1.1;
+        }
+
+        .card-nome {
+            font-size: 1em;
+            font-weight: 400;
+            display: block; /* Faz o nome ficar em outra linha */
+        }
+        /* ESTILIZAÇÃO DO HEADER COM LOGO E TÍTULO */
+        .site-header-link {
+            text-decoration: none; /* Remove o sublinhado do link */
+            color: #333;           /* Cor do texto (a mesma do h1) */
+        }
+
+        .site-header {
+            display: flex;         /* A mágica para alinhar lado a lado */
+            align-items: center;   /* Alinha verticalmente no centro */
+            justify-content: center;
+            background-color: #a3830c;
+            margin-bottom: 20px;   /* Espaçamento abaixo do header */
+            padding-bottom: 15px;  /* Espaçamento para a linha */
+            border-bottom: 10px solid #eee; /* Uma linha sutil de separação */
+        }
+
+        .site-logo {
+            height: 200px;          /* Define a altura da logo. Ajuste se precisar. */
+            width: auto;           /* Largura automática para manter proporção */
+            margin-right: 10px;    /* Espaço entre a logo e o texto */
+        }
+
+        .site-title {
+            font-size: 2.8em;      /* Tamanho do texto */
+            font-weight: 800;      /* Peso da fonte (negrito) */
+        }
+
+        .code-snippet {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Empurra o botão para a direita */
+            
+            background-color: #363521; /* Cor de fundo escura */
+            color: #e2e8f0;            /* Cor do texto clara */
+            
+            border-radius: 8px;        /* Cantos arredondados */
+            padding: 10px 16px;        /* Espaçamento interno */
+            margin-bottom: 25px;       /* Espaço abaixo do bloco */
+            
+            font-family: 'Consolas', 'Menlo', 'monospace'; /* Fonte de código */
+            overflow: hidden;          /* Garante que tudo fique dentro dos cantos */
+        }
+
+        /* Estilo para o <pre> e <code> */
+        .code-snippet pre,
+        .code-snippet code {
+            margin: 0;
+            padding: 0;
+            background: none;
+            font-family: inherit; /* Herda a fonte do .code-snippet */
+            font-size: 0.95em;
+            overflow-x: auto;   /* Permite rolar horizontalmente se o texto for longo */
+            white-space: pre;   /* Mantém o texto em uma linha */
+        }
+
+        /* Estilo para o botão de copiar */
+        .copy-btn {
+            background-color: transparent;
+            border: none;
+            color: #cbd5e0; /* Cor do ícone */
+            cursor: pointer;
+            padding: 6px;
+            border-radius: 6px;
+            
+            /* Garante que o botão não encolha */
+            flex-shrink: 0;
+            margin-left: 10px; /* Espaço entre o texto e o botão */
+            
+            transition: background-color 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background-color: #4a5568; /* Fundo leve no hover */
+            color: #fff;
+        }
+
+        /* Oculta a mensagem "Copiado!" por padrão */
+        .copy-btn .text-copied {
+            display: none; /* Escondido por padrão */
+            color: #eef5da; /* Cor verde */
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        /* Mostra "Copiado!" e oculta "copiar" quando a classe 'copied' é adicionada */
+        .copy-btn.copied .text-copied {
+            display: inline-block; /* Mostra o texto */
+        }
+    
+        .copy-btn.copied .icon-copy {
+            display: none;
+        }
+
+        footer {
+            width: 100%;
+            text-align: center; /* Centraliza todo o texto */
+            padding: 30px 15px; /* Espaçamento interno (30px em cima/baixo, 15px lados) */
+            margin-top: 50px; /* Espaço para separá-lo do conteúdo acima */
+            border-top: 1px solid #eee; /* Linha de separação bem sutil */
+            color: #888; /* Cor de texto suave, sem destaque */
+        }
+
+        footer p {
+            margin: 0; /* Remove margem padrão do parágrafo */
+            font-size: 0.9em; /* Texto um pouco menor */
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center; /* Centraliza os ícones */
+            gap: 20px; /* Espaço entre os ícones */
+            margin-top: 15px; /* Espaço entre o texto e os ícones */
+        }
+
+        .social-links a {
+            color: #777; /* Cor dos ícones (um pouco mais escura que o texto) */
+            transition: color 0.2s ease; /* Efeito suave no hover */
+        }
+
+        .social-links a:hover {
+            color: #222; /* Cor mais escura ao passar o mouse */
+        }
+
+        .social-links svg {
+            width: 24px;  /* Tamanho fixo para os ícones */
+            height: 24px;
+        }
