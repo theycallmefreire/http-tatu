@@ -19,13 +19,13 @@ Eu particularmente adoro tatus!
 ### Galeria Principal
 A página inicial (`/`) exibe todos os códigos de status cadastrados, permitindo uma visualização rápida da galeria e suas descrições.
 
-<img width="1710" height="888" alt="image" src="https://github.com/user-attachments/assets/66003637-7b85-4dca-92d4-e8b49a6c0005" />
+<img width="1516" height="748" alt="image" src="https://github.com/user-attachments/assets/6ed913b7-f290-4a29-8bec-a69d0884bd3c" />
 
 
 ### Página de Status
 Cada código possui uma página dedicada (ex: `/404`) que mostra a imagem em tamanho maior e a descrição daquele status, sempre com a temática da preservação.
 
-<img width="1889" height="878" alt="image" src="https://github.com/user-attachments/assets/e6002be0-0af7-4508-a98a-fa44db715a4f" />
+<img width="1533" height="755" alt="image" src="https://github.com/user-attachments/assets/9229f161-0b10-4154-b73c-8d79cbe3ba7e" />
 
 
 ## Funcionalidades
