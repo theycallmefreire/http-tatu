@@ -41,38 +41,3 @@ Cada código possui uma página dedicada (ex: `/404`) que mostra a imagem em tam
 * **Framework:** Flask
 * **Frontend:** HTML5
 * **Templates:** Jinja2
-
-## Como Executar Localmente
-
-Siga os passos abaixo para rodar o projeto na sua máquina.
-
-1.  **Clone o repositório:**
-    ```bash
-    git clone [https://github.com/seu-usuario/http-tatu.git](https://github.com/seu-usuario/http-tatu.git)
-    cd http-tatu
-    ```
-
-2.  **(Recomendado) Crie e ative um ambiente virtual:**
-    ```bash
-    # Criar o ambiente
-    python -m venv venv
-    
-    # Ativar no Windows
-    .\venv\Scripts\activate
-    
-    # Ativar no macOS/Linux
-    source venv/bin/activate
-    ```
-
-3.  **Instale as dependências:**
-    ```bash
-    pip install Flask
-    ```
-4. **Instale requirements**
-   ```bash
-   pip install -r requirements.txt
-   ```
-5.  **Rode o aplicativo:**
-    ```bash
-    flask --app main run
-    ```
