@@ -1,6 +1,7 @@
 from flask import Flask, render_template, abort
 from data import STATUS_DATA
 
+
 app = Flask(__name__)
 
 
